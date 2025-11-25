@@ -1,73 +1,59 @@
-Online Bookstore SQL Analytics
+# 📚 Online Book Store Analysis
 
-Advanced SQL Project using MS SQL Server
+## 📄 Project Overview
+This project focuses on building an **SQL-based analytical system** for an online bookstore. The goal is to address core business challenges such as poor inventory visibility, limited customer insights, and the lack of a centralized sales monitoring system. By analyzing sales data, customer behavior, and inventory levels, this project provides actionable recommendations to optimize operations and boost revenue.
 
-📌 Project Overview
+## 💾 Dataset
+The analysis utilizes a relational database consisting of three main tables, each containing **500 records**:
 
-This project performs end-to-end data analysis on an online bookstore using MS SQL Server.
-It applies advanced SQL techniques—CTEs, window functions, ranking, aggregations, and time-series analysis—to extract meaningful insights that help with sales optimization, customer retention, and inventory management.
+* **`Books.csv`**: Contains details about the book inventory.
+    * *Columns:* `Book_ID`, `Title`, `Author`, `Genre`, `Published_Year`, `Price`, `Stock`.
+* **`Customers.csv`**: Contains customer demographic information.
+    * *Columns:* `Customer_ID`, `Name`, `Email`, `Phone`, 'City', `Country`.
+* **`Orders.csv`**: Records transactional data for book purchases.
+    * *Columns:* `Order_ID`, `Customer_ID`, `Book_ID`, `Order_Date`, `Quantity`, `Total_Amount`.
 
-The dataset includes three core tables:
+## 🛠️ Tech Stack
+* **Database:** SQL (MS SQL Server)
+* **Analysis:** SQL Queries (Aggregations, Joins, Window Functions, CTEs)
+* **Reporting:** PowerPoint, PDF
 
-Books
+## 📊 Key Analysis & Queries
+The project involves **30+ SQL queries** ranging from basic data retrieval to advanced analytics. Key areas of analysis include:
 
-Customers
+1.  **Inventory Management:**
+    * Calculated remaining stock levels after fulfilling orders.
+    * Identified books with low stock to prevent stockouts.
+2.  **Sales Performance:**
+    * Analyzed total revenue and monthly revenue trends.
+    * Identified the top-selling genres (Mystery & Science Fiction) and authors.
+    * Ranked books by revenue within each genre.
+3.  **Customer Insights:**
+    * Calculated **Customer Lifetime Value (CLV)** to identify high-value clients.
+    * Found customers with consecutive monthly purchases to track loyalty.
+    * Segmented customers based on spending habits and location.
 
-Orders
+## 💡 Key Findings
+* **Top Genres:** **Mystery** and **Science Fiction** are the best-performing genres in terms of sales volume.
+* **Inventory Issues:** Analysis revealed several books with **negative remaining stock**, indicating urgent restocking needs or data discrepancies.
+* **Revenue Trends:** Sales revenue shows consistent growth with predictable peaks between January and September.
+* **High-Value Customers:** Identified top customers (e.g., Kim Turner, Jonathon Strickland) contributing significantly to total revenue.
 
-A set of 20 analytical SQL queries were written to address real business problems such as sales patterns, customer spending behavior, revenue tracking, and stock management.
+## 🚀 Business Recommendations
+1.  **Optimize Inventory:** Stop overstocking slow-moving genres and reallocate budget to high-demand genres like Mystery and Sci-Fi.
+2.  **Loyalty Program:** Target high-CLV customers with exclusive offers to maintain retention.
+3.  **Dynamic Pricing:** Consider bundling low-stock or slow-moving books with bestsellers to clear inventory.
+4.  **Stock Monitoring:** Implement an automated alert system for books falling below a critical stock threshold (e.g., < 10 units).
 
-📊 Key Analytical Insights
-🟦 Sales & Revenue Analysis
+## 📝 How to Run
+1.  **Set up the Database:**
+    * Create a new database named `OnlineBookStore`.
+    * Import the CSV files (`Books.csv`, `Customers.csv`, `Orders.csv`) into their respective tables.
+2.  **Run the Analysis:**
+    * Open `Online_Book_Store.sql` in your SQL client.
+    * Execute the queries to reproduce the analysis and insights.
+3.  **View Reports:**
+    * Check `ONLINE BOOK STORE ANALYSIS.pdf` or `Online-Bookstore-Analysis.pptx` for a visual summary of the findings.
 
-Genre-wise total books sold
-
-Author-wise revenue contribution
-
-Most expensive & best-selling books
-
-Revenue contribution percentage by each book
-
-Monthly revenue with running totals
-
-Customers with above-average spending
-
-🟩 Customer Behavior Insights
-
-Customer lifetime value
-
-Loyal customers with consecutive monthly purchases
-
-🟧 Inventory Insights
-
-Books with remaining stock
-
-Ranking books by sales volume
-
-Identifying high-value inventory and slow-moving stock
-
-🧠 Business Recommendations (Short & Impactful)
-
-Focus inventory and marketing on top-performing genres and books.
-
-Create promotions for expensive books with low sales.
-
-Strengthen retention by rewarding customers with high lifetime value.
-
-Encourage repeat purchases with monthly loyalty offers.
-
-Use stock insights to prevent overstock and avoid stockouts.
-
-🛠️ Tech Stack
-
-MS SQL Server
-
-SQL Window Functions
-
-CTEs (Common Table Expressions)
-
-Aggregate Functions
-
-Ranking Functions
-
-Joins & Subqueries
+---
+*Created by [Nikhil Vishwakarma]*
